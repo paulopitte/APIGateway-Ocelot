@@ -1,4 +1,5 @@
 {
+  //// para o Ocelot, ele entenque que dentro da arquitetura, ele está na camanda "UpStream" que seria o 1º ponto de acesso do cliente
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/product",
@@ -28,15 +29,28 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port":   5001  
+          "Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/gateway/order",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      "ServiceName": "",
+      "DownstreamPathTemplate": "/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/users",
+      "UpstreamHttpMethod": [ "Get" ]
     }
 
   ],
   "GlobalConfiguration": {
-  //  "BaseUrl": "http://localhost:44349"
+    //  "BaseUrl": "http://localhost:44349"
   }
 }
