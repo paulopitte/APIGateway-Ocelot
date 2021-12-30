@@ -50,6 +50,19 @@
     }
 
   ],
+  //"Aggregates": [
+  //  {
+  //    "RouteKeys": [
+  //      "Product",
+  //      "ProductPrice",
+  //      "Category"
+  //    ],
+  //    "UpstreamPathTemplate": "/api/catalog/{id}/aggregated-details",
+  //    "Aggregator": "CatalogAggregator"
+  //  }
+
+  //],
+
   "GlobalConfiguration": {
     //  "BaseUrl": "http://localhost:44349"
   }

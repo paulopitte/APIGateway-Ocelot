@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mkt.Gateway.Aggregators;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
@@ -20,6 +21,7 @@ namespace Mkt.Gateway
         public void ConfigureServices(IServiceCollection services)
         {        
             services.AddOcelot(Configuration);
+            //  services.AddSingletonDefinedAggregator<CatalogAggregator>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
